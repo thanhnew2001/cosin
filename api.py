@@ -8,14 +8,8 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 
-# Configure CORS options
-cors = CORS(app, resources={
-    r"/*": {
-        "origins": "*",  # You can specify domains, e.g., "http://localhost:3000"
-        "methods": "*",  # Allowed methods
-        "allow_headers": ["Content-Type", "Authorization"]
-    }
-})
+CORS(app, resources={r"/*": {"origins": "*", "methods": "*", "allow_headers": "*"}})
+
 
 def load_data(directory):
     questions = []
