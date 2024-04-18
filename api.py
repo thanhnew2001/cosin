@@ -23,7 +23,7 @@ def load_data(directory):
     try:
         for filename in os.listdir(directory):
             if filename.endswith(".jsonl"):
-                with open(os.path.join(directory, filename), 'r', 'encoding=utf-8') as file:
+                with open(os.path.join(directory, filename), 'r') as file:
                     for line in file:
                         data = json.loads(line)
                         questions.append(data['question'])
