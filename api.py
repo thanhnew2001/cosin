@@ -44,7 +44,7 @@ class QuestionSearcher:
             return "An error occurred while finding a similar question."
 
 # Load data and prepare searcher
-questions, answers = load_data('data')
+questions, answers = load_data('bank')
 searcher = QuestionSearcher(questions, answers)
 
 @app.route('/search', methods=['POST'])
