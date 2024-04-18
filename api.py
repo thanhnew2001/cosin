@@ -66,7 +66,11 @@ def search():
         if not question:
             return jsonify({'error': 'No question provided'}), 400
         answer = searcher.find_most_similar(question)
-        return jsonify({'question': question, 'answer': answer})
+        json =  jsonify({'question': question, 'answer': answer})
+
+        decoded_string = bytes(json, "utf-8").decode("unicode_escape")
+        return decoded_string
+
     except KeyError:
         return jsonify({'error': 'Invalid data format, question key missing'}), 400
     except Exception as e:
