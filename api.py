@@ -4,7 +4,18 @@ import json
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
+from flask_cors import CORS
+
 app = Flask(__name__)
+
+# Configure CORS options
+cors = CORS(app, resources={
+    r"/api/*": {
+        "origins": "*",  # You can specify domains, e.g., "http://localhost:3000"
+        "methods": ["GET", "POST", "DELETE", "PUT"],  # Allowed methods
+        "allow_headers": ["Content-Type", "Authorization"]
+    }
+})
 
 def load_data(directory):
     questions = []
