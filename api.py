@@ -58,7 +58,7 @@ class QuestionSearcher:
 questions, answers = load_data('bank')
 searcher = QuestionSearcher(questions, answers)
 
-@app.route('/search', methods=['POST'])
+@app.route('/prompt', methods=['POST'])
 def search():
     try:
         data = request.json
