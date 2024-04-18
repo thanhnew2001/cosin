@@ -8,7 +8,13 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 
-CORS(app, resources={r"/*": {"origins": "*", "methods": "*", "allow_headers": "*"}})
+# Apply CORS to all routes and all origins with specific headers allowed
+CORS(app, resources={r"/*": {
+    "origins": "*",  # Allows all origins
+    "methods": "*",  # Allows all methods
+    "allow_headers": "*"  # Allows all headers
+    }
+})
 
 
 def load_data(directory):
