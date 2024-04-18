@@ -12,7 +12,7 @@ app = Flask(__name__)
 cors = CORS(app, resources={
     r"/api/*": {
         "origins": "*",  # You can specify domains, e.g., "http://localhost:3000"
-        "methods": ["GET", "POST", "DELETE", "PUT"],  # Allowed methods
+        "methods": "*",  # Allowed methods
         "allow_headers": ["Content-Type", "Authorization"]
     }
 })
